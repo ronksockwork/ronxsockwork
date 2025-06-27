@@ -1,150 +1,178 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RonxSockWork - Custom Motor Klasik</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #fefefe;
-      color: #222;
+      background: #111;
+      color: #eee;
     }
     header {
-      background: #111;
-      color: white;
-      padding: 1rem 2rem;
+      background: #000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
     }
     header h1 {
-      font-size: 2rem;
       color: #ff6600;
     }
     nav a {
-      color: white;
+      color: #eee;
+      margin-left: 1rem;
       text-decoration: none;
-      margin-left: 1.5rem;
       font-weight: 600;
-      transition: color 0.3s;
+      padding: 0.5rem 1rem;
+      background: #222;
+      border-radius: 5px;
     }
     nav a:hover {
-      color: #ff6600;
+      background: #ff6600;
+      color: #000;
     }
+
     .hero {
-      background: url('https://images.unsplash.com/photo-1605711285791-6f94b083f1d0?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      color: white;
-      padding: 6rem 2rem;
-      text-align: center;
+      background: url('https://images.unsplash.com/photo-1549921296-3a6b85f8d30e?auto=format&fit=crop&w=1600&q=80') center / cover fixed no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
       position: relative;
     }
     .hero::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
     }
-    .hero-content {
+    .hero-grid {
       position: relative;
       z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      padding: 3rem;
     }
-    .hero h2 {
+    .hero-content h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      color: white;
     }
-    .hero p {
-      font-size: 1.3rem;
+    .hero-content p {
+      font-size: 1.2rem;
       margin-bottom: 2rem;
     }
-    .hero button {
-      padding: 1rem 2rem;
+    .hero-content a {
+      padding: 0.8rem 2rem;
       background: #ff6600;
       color: white;
-      border: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      text-decoration: none;
+      border-radius: 5px;
     }
-    .hero button:hover {
-      background: #e65c00;
+    .hero img {
+      width: 250px;
+      border-radius: 50%;
+      border: 5px solid #ff6600;
+      background: white;
     }
 
-    .about {
+    section {
       padding: 4rem 2rem;
-      background: #fff;
+      max-width: 1000px;
+      margin: auto;
     }
-    .about h2 {
-      text-align: center;
+    .section-title {
       font-size: 2rem;
-      color: #111;
-      margin-bottom: 1rem;
+      color: #ff6600;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
     .about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
       text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.7;
     }
 
-    .features {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      padding: 4rem 2rem;
-      background: #f4f4f4;
+      margin-top: 2rem;
     }
-    .feature {
-      background: white;
+    .service-box {
+      background: #222;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      border: 1px solid #444;
       text-align: center;
-    }
-    .feature h3 {
-      margin-bottom: 1rem;
-      color: #ff6600;
     }
 
-    #kontak {
-      padding: 4rem 2rem;
-      background: #f4f4f4;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      align-items: start;
     }
-    #kontak h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #111;
-      margin-bottom: 2rem;
-    }
-    #kontak p {
-      font-size: 1.1rem;
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
       margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background: #222;
+      color: #eee;
     }
-    #kontak a {
-      color: #222;
+    form button {
+      padding: 0.7rem 2rem;
+      background: #ff6600;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .social-icons a {
+      display: block;
+      color: #ff6600;
+      margin-bottom: 0.5rem;
       text-decoration: none;
     }
-    #kontak img {
-      vertical-align: middle;
-      margin-right: 8px;
+    .social-icons i {
+      margin-right: 10px;
+    }
+
+    iframe {
+      border: 0;
+      width: 100%;
+      height: 300px;
+      margin-top: 2rem;
+      border-radius: 10px;
     }
 
     footer {
-      background: #111;
-      color: white;
+      background: #000;
+      color: #ccc;
       text-align: center;
       padding: 2rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>RonxSockWork</h1>
     <nav>
@@ -156,48 +184,74 @@
   </header>
 
   <section class="hero" id="home">
-    <div class="hero-content">
-      <h2>Bangun Motor Klasik Impianmu</h2>
-      <p>Spesialis dalam modifikasi motor klasik & cafe racer yang mencerminkan gaya dan jiwa unikmu.</p>
-      <button onclick="window.location.href='https://wa.me/6281234567890'">Hubungi Kami via WhatsApp</button>
-    </div>
-  </section>
-
-  <section class="about" id="tentang">
-    <h2>Tentang RonxSockWork</h2>
-    <p>
-      Kami adalah bengkel custom motor klasik dengan semangat seni dan mesin. RonxSockWork menghidupkan kembali jiwa motor tua dan menjadikannya karya seni jalanan. Kami percaya bahwa setiap motor memiliki cerita dan karakter yang layak untuk dihidupkan kembali.
-    </p>
-  </section>
-
-  <section class="features" id="layanan">
-    <div class="feature">
-      <h3>Desain Eksklusif</h3>
-      <p>Setiap motor didesain khusus sesuai karakter dan keinginan pelanggan.</p>
-    </div>
-    <div class="feature">
-      <h3>Mesin Andal</h3>
-      <p>Kami menyediakan sparepart custom untuk motor klasik dan menerima jasa restorasi serta custom motor sesuai permintaan Anda.</p>
-    </div>
-    <div class="feature">
-      <h3>Finishing Premium</h3>
-      <p>Cat, jok, dan aksesori berkualitas tinggi untuk tampilan maksimal.</p>
-    </div>
-  </section>
-
-  <section id="kontak">
-    <h2>Kontak Kami</h2>
-    <div style="max-width:800px; margin:0 auto;">
-      <p><img src="https://img.icons8.com/ios-filled/24/4CAF50/whatsapp.png"/> WhatsApp: <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></p>
-      <p><img src="https://img.icons8.com/ios-filled/24/000000/new-post.png"/> Email: <a href="mailto:ronxsockwork@gmail.com">ronxsockwork@gmail.com</a></p>
-      <div style="margin-top:2rem;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.7208287890358!2d106.8271538!3d-6.1751101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e89f334b2f%3A0x9f3d1adf391fbf1!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1612439421344!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h2>Custom Motor Klasik Penuh Gaya</h2>
+        <p>Kami tidak hanya membangun motor, kami membangun karakter.</p>
+        <a href="#kontak">Hubungi Kami</a>
+      </div>
+      <div>
+        <img src="logo.png" alt="RonxSockWork Logo" />
       </div>
     </div>
   </section>
 
+  <section class="about" id="tentang">
+    <h2 class="section-title">Tentang Kami</h2>
+    <p>RonxSockWork adalah bengkel motor custom klasik yang mengedepankan nilai seni, maskulinitas, dan gaya hidup otomotif. Kami hadir untuk para pecinta motor klasik yang ingin memiliki tunggangan dengan karakter kuat dan desain yang tidak pasaran.</p>
+  </section>
+
+  <section class="services" id="layanan">
+    <h2 class="section-title">Layanan Kami</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>Accessories & Parts</h3>
+        <p>Sparepart custom dan aksesoris motor klasik eksklusif untuk tampilan yang unik.</p>
+      </div>
+      <div class="service-box">
+        <h3>Jasa Restorasi</h3>
+        <p>Menghidupkan kembali motor tua menjadi masterpiece yang penuh cerita.</p>
+      </div>
+      <div class="service-box">
+        <h3>Custom Motor</h3>
+        <p>Motor custom full build dengan gaya khas RonxSockWork yang artistik dan bertenaga.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <h2 class="section-title">Kontak</h2>
+    <div class="contact-grid">
+      <div>
+        <p>Ingin konsultasi atau tanya harga? Langsung saja hubungi kami lewat kontak di bawah ini.</p>
+        <div class="social-icons">
+          <a href="mailto:ronxsockwork@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://facebook.com/ronxsockwork" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <form onsubmit="return handleWhatsAppSubmit(this)">
+        <input type="text" name="name" placeholder="Nama Anda" required>
+        <textarea name="message" rows="4" placeholder="Pesan Anda" required></textarea>
+        <button type="submit">Kirim via WhatsApp</button>
+      </form>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.014689556144!2d106.87098567592149!3d-6.259548793739497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3eb7cc16db5%3A0xfca1972b92d2d7e2!2sRonxSockWork!5e0!3m2!1sid!2sid!4v1719399390000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
   <footer>
-    <p>&copy; 2025 RonxSockWork. All rights reserved.</p>
+    <p>&copy; 2025 RonxSockWork. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    function handleWhatsAppSubmit(form) {
+      const name = form.name.value;
+      const message = form.message.value;
+      const url = `https://wa.me/6281234567890?text=${encodeURIComponent('Nama: ' + name + '\nPesan: ' + message)}`;
+      window.open(url, '_blank');
+      return false;
+    }
+  </script>
 </body>
 </html>
