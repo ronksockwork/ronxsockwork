@@ -2,11 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RonxSockWork - Custom Motor Klasik</title>
   <link rel="icon" href="logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
@@ -48,7 +48,7 @@
       overflow: hidden;
     }
     .parallax-bg {
-      background: url('https://images.unsplash.com/photo-1549921296-3a6b85f8d30e?auto=format&fit=crop&w=1600&q=80') center / cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1583267745858-9fe8c42e1b1c?auto=format&fit=crop&w=1600&q=80') center / cover no-repeat;
       position: absolute;
       top: 0;
       left: 0;
@@ -56,7 +56,7 @@
       height: 150%;
       z-index: 0;
       transform: translateY(0);
-      transition: transform 0.2s ease-out;
+      transition: transform 0.1s;
     }
     .hero-overlay {
       position: absolute;
@@ -70,22 +70,15 @@
     .hero-grid {
       position: relative;
       z-index: 2;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       max-width: 1200px;
       padding: 3rem;
       margin: auto;
-      height: 100%;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
-    @keyframes fadeInUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
     .hero-content h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
@@ -180,6 +173,15 @@
       margin-right: 10px;
     }
 
+    .review img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: auto;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
     iframe {
       border: 0;
       width: 100%;
@@ -198,6 +200,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>RonxSockWork</h1>
     <nav>
@@ -223,8 +226,63 @@
     </div>
   </section>
 
+  <section id="tentang">
+    <h2 class="section-title">Tentang Kami</h2>
+    <p class="about">
+      RonxSockWork adalah bengkel custom motor klasik yang berlokasi di Bandung. Kami menyediakan layanan restorasi, custom motor, serta menjual sparepart dan aksesoris klasik. Kami percaya motor bukan hanya kendaraan, tapi ekspresi gaya hidup dan seni.
+    </p>
+  </section>
+
+  <section id="layanan">
+    <h2 class="section-title">Layanan</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>Accessories</h3>
+        <p>Pilihan aksesoris motor klasik yang unik dan berkualitas tinggi.</p>
+      </div>
+      <div class="service-box">
+        <h3>Restorasi</h3>
+        <p>Menghidupkan kembali motor lama Anda dengan sentuhan profesional.</p>
+      </div>
+      <div class="service-box">
+        <h3>Custom Motor</h3>
+        <p>Bangun motor impian Anda sesuai gaya dan karakter pribadi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="review">
+    <h2 class="section-title">Galeri Modifikasi</h2>
+    <img src="https://images.unsplash.com/photo-1610915514604-2aaeead99b3f?auto=format&fit=crop&w=1200&q=80" alt="Motor Custom" />
+  </section>
+
+  <section id="kontak">
+    <h2 class="section-title">Kontak</h2>
+    <div class="contact-grid">
+      <div>
+        <p>Hubungi kami melalui media sosial atau kirim pesan langsung ke WhatsApp.</p>
+        <div class="social-icons">
+          <a href="mailto:ronxsockwork@gmail.com"><i class="fa-solid fa-envelope"></i> ronxsockwork@gmail.com</a>
+          <a href="https://wa.me/6281234567890"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://facebook.com/ronxsockwork"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        </div>
+      </div>
+      <div>
+        <form onsubmit="return handleWhatsAppSubmit(this)">
+          <input type="text" name="name" placeholder="Nama Anda" required />
+          <textarea name="message" rows="4" placeholder="Pesan Anda" required></textarea>
+          <button type="submit">Kirim ke WhatsApp</button>
+        </form>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63352.17355354729!2d107.5689204!3d-6.9034499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e720d3e89a59%3A0x557177b51ad3cc77!2sBandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1623330226341!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RonxSockWork. All rights reserved.</p>
+  </footer>
+
   <script>
-    // WhatsApp handler
     function handleWhatsAppSubmit(form) {
       const name = form.name.value;
       const message = form.message.value;
@@ -238,15 +296,10 @@
       const scrollTop = window.scrollY;
       const bg = document.querySelector('.parallax-bg');
       if (bg) {
-        bg.style.transform = `translateY(${scrollTop * 0.5}px)`;
-      }
-
-      const heroGrid = document.querySelector('.hero-grid');
-      const trigger = window.innerHeight / 1.3;
-      if (heroGrid.getBoundingClientRect().top < trigger) {
-        heroGrid.style.opacity = 1;
+        bg.style.transform = `translateY(${scrollTop * 0.3}px)`;
       }
     });
   </script>
+
 </body>
 </html>
